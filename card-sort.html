@@ -92,6 +92,7 @@
         background: #ee6;
         box-shadow: 0 2px 2px rgba(172, 121, 0, 0.58);
         cursor: grab;
+        white-space: pre-line;
       }
       .card .card-image {
         width: 100%;
@@ -313,7 +314,7 @@
           cardElement.replaceChildren(...cardChildElements);
         }
         else {
-          cardElement.textContent = text;
+          cardElement.textContent = text.replaceAll("\\n", "\r\n");
         }
         cardElement.setAttribute('data-text', text);
         targetGrid.show(
